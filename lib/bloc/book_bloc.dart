@@ -7,7 +7,7 @@ class BookBloc {
   final BehaviorSubject<book_model> _subject =
   BehaviorSubject<book_model>();
 
-  getUser() async {
+  getBook() async {
     book_model response = await _repository.getBook();
     _subject.sink.add(response);
   }
