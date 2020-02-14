@@ -9,17 +9,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Colors.red,
         textTheme: TextTheme(
-            title: TextStyle(fontSize: 30, color: Colors.white),
-            subtitle: TextStyle(fontSize: 20, color: Colors.white),
-            body1: TextStyle(fontSize: 15, color: Colors.white)),
+            title: TextStyle(fontSize: 30, color: Colors.black),
+            subtitle: TextStyle(fontSize: 20, color: Colors.black),
+            body1: TextStyle(fontSize: 15, color: Colors.black)),
       ),
       home: Container(
         child: BookWidget(),
-        decoration: BoxDecoration(
+       /* decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
               Color(0xFFf5af19),
             ],
           ),
-        ),
-      ),
+        ),*/
+    ),
     );
   }
 }

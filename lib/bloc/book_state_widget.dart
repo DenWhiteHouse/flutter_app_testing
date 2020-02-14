@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app_testing/network/book_model.dart';
+import 'package:flutter_app_testing/presentation/pages/BookPage.dart';
 import 'book_bloc.dart';
 
 class BookWidget extends StatefulWidget {
@@ -57,13 +58,6 @@ class _BookWidgetState extends State<BookWidget> {
   }
 
   Widget _buildBookWidget(book_model data) {
-    return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Book widget",
-            style: Theme.of(context).textTheme.subtitle),
-          ],
-        ));
+    return BookPage(data);
   }
 }
