@@ -72,6 +72,19 @@ class BookPage extends StatelessWidget {
                     ),
                   )
                 ]),
+          ),
+          Container(
+      height: 80,
+      padding: EdgeInsets.all(16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          RaisedButton(
+            textColor: Colors.black,
+            onPressed: () {},
+            child:Text('Add Book to favourite'),),
+        ],
+      )
           )
         ],
       ),
