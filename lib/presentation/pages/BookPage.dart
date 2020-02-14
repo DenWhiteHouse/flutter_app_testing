@@ -15,16 +15,18 @@ class BookPage extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          SizedBox( height: 180,
+          Container(
+            height: 180,
+            padding: EdgeInsets.all(16),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
                     //padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-                    margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                    //margin: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
                     child: Image.network(
                       '${book.items[0].volumeInfo.imageLinks.smallThumbnail}',
-                      fit: BoxFit.fill,
+                      //fit: BoxFit.fill,
                     ),
                     constraints: BoxConstraints(
                         maxHeight: 180.0,
@@ -33,6 +35,7 @@ class BookPage extends StatelessWidget {
                         minHeight: 170.0),
 
                   ),
+                  SizedBox(width: 8,),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,11 +51,14 @@ class BookPage extends StatelessWidget {
                         SizedBox(height: 20,),
                         Text('N.Pages: ${book.items[0].volumeInfo.pageCount}'),
                         SizedBox(height: 20,),
-                        AutoSizeText('${book.items[0].volumeInfo.description}',
-
-                            style: TextStyle(
-                                fontSize: 10
-                            ))
+                        Expanded(
+                          child: AutoSizeText('${book.items[0].volumeInfo.description}',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 10
+                              )),
+                        )
                       ],
                     ),
                   )
