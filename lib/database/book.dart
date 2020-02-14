@@ -1,5 +1,5 @@
 import 'package:moor_flutter/moor_flutter.dart';
-part   'tables.g.dart';
+part   'book.g.dart';
 
 class Books extends Table{
   TextColumn get bookTitle =>
@@ -7,6 +7,10 @@ class Books extends Table{
 }
 
 @UseMoor(tables: [Books])
-class MyDatabase {
-
+class MyDatabase extends _$MyDatabase {
+  MyDatabase()
+      : super(FlutterQueryExecutor.inDatabaseFolder(
+    path: 'db.sqlite',
+  ));  @override
+  int get schemaVersion => 1;
 }
