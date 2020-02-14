@@ -1,10 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_testing/database/book.dart';
+import 'package:flutter_app_testing/network/book_api_provider.dart';
 import 'package:flutter_app_testing/network/book_model.dart';
 import 'package:flutter_app_testing/presentation/widgets/search_bar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:sqflite/sqflite.dart';
 
 class BookPage extends StatelessWidget {
   final book_model book;
+  final BooksDao booksDao = MyDatabase().booksDao;
 
   BookPage(this.book);
 
@@ -81,7 +86,7 @@ class BookPage extends StatelessWidget {
         children: <Widget>[
           RaisedButton(
             textColor: Colors.black,
-            onPressed: () {},
+            onPressed: () => addBookToFavourite(book.items[0].volumeInfo.title.toString()),
             child:Text('Add Book to favourite'),),
         ],
       )
@@ -89,6 +94,13 @@ class BookPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  addBookToFavourite(String bookTitle){
+    booksDao.addBook(bookTitle: bookTitle);
+    booksDao.allBooks.then((value){
+      print(value);
+    });
   }
 }
 
@@ -117,5 +129,4 @@ class DataSearch extends SearchDelegate<String>{
   Widget buildSuggestions(BuildContext context) {
     return Container();
   }
-
 }

@@ -23,9 +23,9 @@ class MyDatabase extends _$MyDatabase {
 class BooksDao extends DatabaseAccessor<MyDatabase> with _$BooksDaoMixin {
   BooksDao(MyDatabase db) : super(db);
 
-  Future<List<Book>> get allWatchingModes => select(books).get();
+  Future<List<Book>> get allBooks => select(books).get();
 
-  Stream<List<Book>> get watchAllModes => select(books).watch();
+  Stream<List<Book>> get watchAlBooks => select(books).watch();
 
   ///Adds a new Book
   void addBook({String bookTitle}) {
