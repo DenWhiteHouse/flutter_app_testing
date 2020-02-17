@@ -28,10 +28,9 @@ class BooksDao extends DatabaseAccessor<MyDatabase> with _$BooksDaoMixin {
   Stream<List<Book>> get watchAlBooks => select(books).watch();
 
   ///Adds a new Book
-  void addBook({String bookTitle}) {
+  Future<int> addBook({String bookTitle}) {
     final _entry = BooksCompanion(
       bookTitle: Value(bookTitle),
     );
-    into(books).insert(_entry);
-  }
-}
+    return into(books).insert(_entry);
+}}

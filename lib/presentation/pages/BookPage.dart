@@ -97,7 +97,10 @@ class BookPage extends StatelessWidget {
   }
 
   addBookToFavourite(String bookTitle){
-    booksDao.addBook(bookTitle: bookTitle);
+    booksDao.addBook(bookTitle: bookTitle).catchError((onError)
+    {
+      print("This book has already been added as favourite");
+    });
     booksDao.allBooks.then((value){
       print(value);
     });
