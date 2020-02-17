@@ -7,6 +7,8 @@ import 'package:flutter_app_testing/presentation/widgets/search_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sqflite/sqflite.dart';
 
+import 'favourite_books.dart';
+
 class BookPage extends StatelessWidget {
   final book_model book;
   final BooksDao booksDao = MyDatabase().booksDao;
@@ -88,6 +90,12 @@ class BookPage extends StatelessWidget {
             textColor: Colors.black,
             onPressed: () => addBookToFavourite(book.items[0].volumeInfo.title.toString()),
             child:Text('Add Book to favourite'),),
+          RaisedButton(
+            textColor: Colors.black,
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteBooks()));
+            },
+            child:Text('Show Favourite Books'),),
         ],
       )
           )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app_testing/network/book_model.dart';
 import 'package:flutter_app_testing/presentation/pages/BookPage.dart';
+import 'package:flutter_app_testing/presentation/pages/favourite_books.dart';
 import 'book_bloc.dart';
 
 class BookWidget extends StatefulWidget {
@@ -60,4 +61,5 @@ class _BookWidgetState extends State<BookWidget> {
   Widget _buildBookWidget(book_model data) {
     return BookPage(data);
   }
+
 }
