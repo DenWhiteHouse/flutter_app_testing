@@ -90,10 +90,13 @@ class BookPage extends StatelessWidget {
             textColor: Colors.black,
             onPressed: () => addBookToFavourite(book.items[0].volumeInfo.title.toString()),
             child:Text('Add Book to favourite'),),
+          SizedBox(width: 16),
           RaisedButton(
             textColor: Colors.black,
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteBooks()));
+              booksDao.allBooks.then((values) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteBooks(values)));
+              });
             },
             child:Text('Show Favourite Books'),),
         ],
