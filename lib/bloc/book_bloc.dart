@@ -2,10 +2,19 @@ import 'package:rxdart/rxdart.dart';
 import 'package:flutter_app_testing/network/book_model.dart';
 import 'package:flutter_app_testing/network/book_repository.dart';
 
+/*
+
 class BookBloc {
   final BookRepository _repository = BookRepository();
   final BehaviorSubject<book_model> _subject =
   BehaviorSubject<book_model>();
+
+  String film;
+
+  getBookByName(String film) async {
+    book_model response = await _repository.getBookByName(film);
+    _subject.sink.add(response);
+  }
 
   getBook() async {
     book_model response = await _repository.getBook();
@@ -20,3 +29,5 @@ class BookBloc {
 
 }
 final bloc = BookBloc();
+
+*/

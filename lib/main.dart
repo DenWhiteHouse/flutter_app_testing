@@ -18,20 +18,7 @@ class MyApp extends StatelessWidget {
             subtitle: TextStyle(fontSize: 20, color: Colors.black),
             body1: TextStyle(fontSize: 15, color: Colors.black)),
       ),
-      home: Container(
-        child: BookWidget(),
-       /* decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.0, 0.7],
-            colors: [
-              Color(0xFFF12711),
-              Color(0xFFf5af19),
-            ],
-          ),
-        ),*/
-    ),
+      home: BookWidget(),
     );
   }
 }

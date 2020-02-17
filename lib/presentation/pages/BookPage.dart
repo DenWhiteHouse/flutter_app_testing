@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_testing/database/book.dart';
 import 'package:flutter_app_testing/network/book_api_provider.dart';
 import 'package:flutter_app_testing/network/book_model.dart';
-import 'package:flutter_app_testing/presentation/widgets/search_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -110,7 +109,11 @@ class BookPage extends StatelessWidget {
 class DataSearch extends SearchDelegate<String>{
   @override
   List<Widget> buildActions(BuildContext context) {
-      return [IconButton(icon: Icon(Icons.clear),onPressed: (){},)];
+      return [IconButton(icon: Icon(Icons.clear),onPressed: (){
+
+        query = "";
+
+      },)];
   }
 
   @override
