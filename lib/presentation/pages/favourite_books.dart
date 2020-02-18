@@ -35,7 +35,7 @@ class _FavouriteBooksState extends State<FavouriteBooks> {
     return Container(
         child: Padding(
             padding: EdgeInsets.all(10.0),
-            child: Text(widget.books[i].bookTitle)));
+            child: ListTile(leading: Text(widget.books[i].bookTitle))));
   }
 }
 
